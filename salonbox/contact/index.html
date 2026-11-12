@@ -37,13 +37,14 @@
       </div>
       <span class="efo-eyebrow">CONTACT</span>
       <h1 class="efo-title">導入・運用のご相談</h1>
-      <p class="efo-lead">必須は4項目のみ。詳細はスキップしてそのまま送信できます。</p>
+      <p class="efo-lead">入力必須は4項目です。送信時にプライバシーポリシーへの同意が必要です。</p>
 
       <div class="efo-progress-wrap">
-        <div class="efo-progress-bar">
+        <div class="efo-progress-bar" role="progressbar" aria-label="必須項目の入力状況" aria-valuemin="0"
+          aria-valuemax="4" aria-valuenow="0">
           <div class="efo-progress-fill" id="progressFill"></div>
         </div>
-        <div class="efo-progress-text" id="progressText">0% 完了</div>
+        <div class="efo-progress-text" id="progressText">必須項目 0/4</div>
       </div>
     </div>
   </header>
@@ -69,10 +70,10 @@
             </label> -->
             <label class="efo-radio-label">
               <input type="radio" name="topic" value="トライアル応募">
-              <span class="efo-radio-btn">トライアル応募</span>
+              <span class="efo-radio-btn">トライアルについて相談</span>
             </label>
             <label class="efo-radio-label">
-              <input type="radio" name="topic" value="導入相談">
+              <input type="radio" name="topic" value="導入相談" checked>
               <span class="efo-radio-btn">導入・運用相談</span>
             </label>
             <label class="efo-radio-label">
@@ -84,6 +85,9 @@
               <span class="efo-radio-btn">その他ご質問</span>
             </label>
           </div>
+          <p class="efo-topic-note">
+            初回相談で売上CSVの提出は不要です。必要な場合は、目的やお取り扱い方法をご説明したうえでご相談します。
+          </p>
           <p id="csvTopicNotice" class="efo-topic-note" hidden>
             お問い合わせ受付後、返信用メールをお送りいたしますので<br>
             そこからデータの送付をお願い致します。
@@ -119,9 +123,18 @@
               </select>
             </div>
           </div>
+          <div class="efo-field">
+            <label for="currentPos">利用中のPOSメーカー/製品名 <span class="efo-badge-opt">任意</span></label>
+            <input id="currentPos" name="currentPos" type="text" class="efo-input" placeholder="例）スマレジ、Bionly など">
+          </div>
+          <div class="efo-field efo-col-span-2">
+            <label for="painPoints">今のお困りごと <span class="efo-badge-opt">任意</span></label>
+            <textarea id="painPoints" name="painPoints" class="efo-input efo-textarea"
+              placeholder="例）集計に時間がかかる、店舗ごとの売上比較がしづらい など"></textarea>
+          </div>
         </div>
 
-        <!-- 任意詳細アコーディオン（店舗数もここへ移動） -->
+        <!-- その他の任意詳細 -->
         <div class="efo-accordion-wrap">
           <button type="button" class="efo-accordion-btn" id="accordionBtn" aria-expanded="false"
             aria-controls="accordionContent">
@@ -131,7 +144,7 @@
               <line x1="12" y1="16" x2="12" y2="12"></line>
               <line x1="12" y1="8" x2="12.01" y2="8"></line>
             </svg>
-            詳しく伝えると提案の精度が上がります <span class="efo-badge-opt"
+            さらに詳しい情報を追加 <span class="efo-badge-opt"
               style="background:#e2e8f0; padding:2px 8px; border-radius:12px;">任意</span>
             <div style="flex-grow:1;"></div>
             <div class="efo-accordion-arrow">
@@ -167,10 +180,6 @@
                 <label for="website">ウェブサイト</label>
                 <input id="website" name="website" type="url" class="efo-input" placeholder="https://example.com"
                   autocomplete="url">
-              </div>
-              <div class="efo-field">
-                <label for="currentPos">利用中のPOSメーカー/製品名</label>
-                <input id="currentPos" name="currentPos" type="text" class="efo-input" placeholder="例）スマレジ、Bionly など">
               </div>
               <div class="efo-field">
                 <label for="csvExportable">データはCSV出力可能ですか？</label>
@@ -214,11 +223,6 @@
                 </div>
               </div>
               <div class="efo-field efo-col-span-2">
-                <label for="painPoints">今のお困りごと</label>
-                <textarea id="painPoints" name="painPoints" class="efo-input efo-textarea"
-                  placeholder="例）集計に時間がかかる、店舗ごとの売上比較がしづらい など"></textarea>
-              </div>
-              <div class="efo-field efo-col-span-2">
                 <label for="message">そのほか</label>
                 <textarea id="message" name="message" class="efo-input efo-textarea"
                   placeholder="現状の課題・使いたい機能について、気になることがあればご自由にご記載ください。"></textarea>
@@ -232,18 +236,18 @@
       <div class="efo-fixed-bottom">
         <div class="efo-container">
           <div id="bottomAssuranceNotice" class="efo-notice-bar" style="margin-bottom:10px;" hidden>
-            ・無料診断のみでも問題ありません<br>
-            ・本契約前提ではありません<br>
+            ・初回相談では売上CSVの提出は不要です<br>
+            ・ご相談のみでも問題ありません<br>
             ・1営業日以内にご連絡します<br>
-            ・お送りいただいたデータは診断目的以外には使用しません
+            ・トライアルのご希望も、まずはご相談いただけます
           </div>
         </div>
         <div class="efo-container efo-submit-inner">
-          <label class="efo-agree-box">
-            <input type="checkbox" id="agree" name="agree" class="req-field" required>
+          <div class="efo-agree-box">
+            <input type="checkbox" id="agree" name="agree" class="req-field" aria-label="プライバシーポリシーに同意" required>
             <span class="efo-agree-text"><a href="https://www.mactism.com/privacy/"
-                target="_blank">プライバシーポリシー</a>に同意</span>
-          </label>
+                target="_blank" rel="noopener noreferrer">プライバシーポリシー</a><label for="agree">に同意</label></span>
+          </div>
 
           <button type="submit" id="contactSubmit" class="efo-btn-submit" disabled>
             <span>送信する</span>
@@ -337,8 +341,8 @@
       <option>オンラインMTG</option>
     </template>
     <template id="tpl-request-type">
-      <option>まずは無料診断だけ受けたい</option>
-      <option>トライアルも検討している</option>
+      <option>まずは無料相談を希望</option>
+      <option>トライアルについて相談したい</option>
       <option>詳しい説明も聞きたい</option>
     </template>
     <template id="tpl-timeframe">
@@ -390,23 +394,8 @@
     const bottomAssuranceNotice = document.getElementById('bottomAssuranceNotice');
     const csvNoticeText = 'CSV1ファイルをお送りいただければ、SalonBoxでどのように見えるか、<br>どこに改善余地があるかを確認できます。※お送りいただくのはお申込み後の返信からです。<br>まずはお気軽にお申し込みください。';
     const monitorNoticeHtml =
-      '<div class="efo-monitor-price">' +
-      '<div class="efo-monitor-price-row">' +
-      '<span class="efo-monitor-fee-label">月額費用(1カ月のみ)</span>' +
-      '<span class="efo-monitor-old">¥24,800</span>' +
-      '<span class="efo-monitor-new">¥9,800</span>' +
-      '<span class="efo-monitor-off">約60%OFF</span>' +
-      '</div>' +
-      '<div class="efo-monitor-initial">' +
-      '初期費用 <span class="efo-monitor-old">¥50,000</span> <span class="efo-monitor-x">×</span> かかりません' +
-      '</div>' +
-      '<div class="efo-monitor-initial">' +
-      '専任担当者による導入サポート' +
-      '</div>' +
-      '</div>' +
-      '<div class="efo-monitor-desc">トライアル期間中は、アプリ改善を目的としたご意見・ご感想のご提供をお願いしております。' +
-      '<br>具体的な内容につきましては、お問い合わせ後にご案内いたします。' +
-      '<br>※応募のみため、クレジットカードなどの決済情報は不要です。</div>';
+      '<div class="efo-monitor-desc">トライアルをご希望の場合も、まずは相談としてお申し込みください。' +
+      '<br>内容や条件はご相談時にご案内します。初回相談で売上CSVの提出は不要です。</div>';
 
     function applyMonitorOnlyTopicMode() {
       if (!monitorOnlyMode || !topicRadios.length) return;
@@ -465,25 +454,24 @@
 
       const percent = Math.round((filled / totalReq) * 100);
       progressFill.style.width = `${percent}%`;
+      progressFill.parentElement.setAttribute('aria-valuenow', filled);
 
       // 状態を毎度リセット
-      agreeBox.classList.remove('is-pulsing');
-      submitBtn.classList.remove('btn-is-pulsing');
+      agreeBox.classList.remove('is-required');
       submitBtn.disabled = true;
       submitBtn.classList.remove('is-active');
 
-      if (percent === 100) {
+      if (filled === totalReq) {
         if (!agreeCheckbox.checked) {
-          progressText.textContent = `100% 完了 (プライバシーポリシーにチェックで送信できます)`;
-          agreeBox.classList.add('is-pulsing'); // 同意をアピール
+          progressText.textContent = `必須項目 ${filled}/${totalReq}・同意チェック後に送信できます`;
+          agreeBox.classList.add('is-required');
         } else {
-          progressText.textContent = `100% 完了 (送信できます)`;
+          progressText.textContent = `必須項目 ${filled}/${totalReq}・送信できます`;
           submitBtn.disabled = false;
           submitBtn.classList.add('is-active');
-          submitBtn.classList.add('btn-is-pulsing'); // ボタンをアピール
         }
       } else {
-        progressText.textContent = `${percent}% 完了`;
+        progressText.textContent = `必須項目 ${filled}/${totalReq}`;
       }
       updateBottomAssuranceNotice(filled);
     }

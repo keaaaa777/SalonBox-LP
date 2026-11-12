@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#f4f8f6">
+  <title>操作デモを体験｜SalonBox</title>
+  <meta name="description" content="架空のサンプルデータで、SalonBoxのCSV取り込み・項目マッピング・売上分析画面を操作できます。実データや実際のCSVは使用しません。">
+  <link rel="icon" type="image/png" href="../images/favicon-32x32.png">
+  <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="../" aria-label="SalonBox トップページ">
+      <img src="../images/logo.webp" alt="" width="32" height="32">
+      <span>SalonBox</span>
+      <span class="brand-divider" aria-hidden="true"></span>
+      <span class="brand-caption">操作デモ</span>
+    </a>
+    <nav class="top-actions" aria-label="ページナビゲーション">
+      <a class="back-link" href="../">LPに戻る</a>
+      <a class="top-cta" href="../contact/">まずは無料で相談する <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> INTERACTIVE DEMO <span class="demo-version">サンプル体験</span></p>
+        <h1 id="page-title">CSVの取り込みから、<br><span>分析結果まで。</span></h1>
+        <p class="intro-lead">SalonBoxの操作を、サンプルデータで体験できます。<br>ファイルを選んで、項目を合わせて、数字の変化を見てみましょう。</p>
+      </div>
+      <div class="privacy-note">
+        <span class="privacy-icon" aria-hidden="true">✓</span>
+        <span><strong>実データは使いません</strong><br>架空のサンプルデータだけで動作します。CSVの送信や保存はありません。</span>
+      </div>
+    </section>
+
+    <section class="demo-app" aria-label="SalonBoxの操作デモ">
+      <div class="demo-topline">
+        <div class="steps" aria-label="デモの進行状況">
+          <div class="step is-current" data-step-indicator="1"><span>1</span><b>CSVを読み込む</b></div>
+          <i aria-hidden="true"></i>
+          <div class="step" data-step-indicator="2"><span>2</span><b>項目を合わせる</b></div>
+          <i aria-hidden="true"></i>
+          <div class="step" data-step-indicator="3"><span>3</span><b>分析を見る</b></div>
+        </div>
+        <span class="demo-runtime"><span></span> 操作できます</span>
+      </div>
+
+      <section class="stage" id="step-upload" aria-labelledby="upload-title">
+        <div class="stage-heading">
+          <div>
+            <p class="stage-kicker">STEP 01 <span>サンプルデータ</span></p>
+            <h2 id="upload-title">デモ用CSVを読み込む</h2>
+            <p class="desktop-upload-instruction">サンプルファイルを右の置き場へドラッグするか、どちらかをクリックしてください。</p>
+            <p class="mobile-upload-instruction">サンプルをクリックまたはタップして読み込めます。実際のCSVは選択しません。</p>
+          </div>
+          <span class="fictional-tag">架空のデータ</span>
+        </div>
+        <div class="upload-layout">
+          <button class="sample-file" id="sample-file" type="button" draggable="true" aria-label="デモ用サンプルCSV。クリックして読み込む">
+            <span class="file-icon" aria-hidden="true"><svg viewBox="0 0 40 44" fill="none"><path d="M8 2h16l10 10v28a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" fill="#E8F7F1" stroke="#4FBF8C" stroke-width="1.5"/><path d="M24 2v10h10" stroke="#4FBF8C" stroke-width="1.5"/><path d="M12 23h16M12 28h16M12 33h10" stroke="#459D77" stroke-width="2" stroke-linecap="round"/></svg></span>
+            <span class="file-meta"><strong>SalonBox_サンプル売上.csv</strong><small>架空データ・1,248行・約86KB</small></span>
+            <span class="drag-handle" aria-hidden="true">⠿</span>
+          </button>
+          <p class="mobile-upload-hint">このサンプルは架空データです。実データは送信されません。</p>
+          <div class="drag-guide" aria-label="左のサンプルファイルを右の置き場へドラッグします">
+            <span>ファイルをこちらへ</span>
+            <svg viewBox="0 0 100 32" aria-hidden="true">
+              <path class="guide-track" d="M5 16h84" />
+              <path class="guide-arrow" d="m78 6 11 10-11 10" />
+              <circle class="guide-dot" cx="10" cy="16" r="4" />
+            </svg>
+          </div>
+          <div class="dropzone" id="dropzone" tabindex="0" role="button" aria-label="ここを押してサンプルCSVを読み込む">
+            <span class="drop-icon" aria-hidden="true"><svg viewBox="0 0 32 32" fill="none"><path d="M16 21V6m0 0-6 6m6-6 6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M7 19v6a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span>
+            <strong class="desktop-drop-label">ここにドラッグ＆ドロップ</strong>
+            <strong class="mobile-drop-label">タップして読み込む</strong>
+            <span>または</span>
+            <span class="drop-button-label">サンプルデータを読み込む <b aria-hidden="true">→</b></span>
+          </div>
+        </div>
+        <div class="stage-footnote"><span aria-hidden="true">ⓘ</span> 実際のCSVファイルを選ぶ機能はありません。このデモ内の架空データのみを使用します。</div>
+        <p class="status-message" id="upload-status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section class="stage" id="step-mapping" aria-labelledby="mapping-title" hidden>
+        <div class="stage-heading">
+          <div>
+            <p class="stage-kicker">STEP 02 <span>項目のマッピング</span></p>
+            <h2 id="mapping-title">CSVの項目をSalonBoxに合わせる</h2>
+            <p class="desktop-map-instruction">項目を選ぶか、左の項目名を右の行へドラッグしてください。</p>
+            <p class="mobile-map-instruction">各行の選択欄から、対応する項目を選んでください。</p>
+          </div>
+          <span class="file-loaded"><span aria-hidden="true">✓</span> サンプルCSVを読み込みました</span>
+        </div>
+        <div class="mapping-assist" id="mapping-assist" hidden role="status" aria-live="polite">
+          <span class="assist-check" aria-hidden="true">✓</span>
+          <span><strong>1項目を設定しました。</strong> 残りの項目も自動でそろえられます。</span>
+          <button type="button" id="assist-auto-map">自動マッピングを使う <span aria-hidden="true">→</span></button>
+          <button type="button" class="assist-dismiss" id="dismiss-assist" aria-label="案内を閉じる">×</button>
+        </div>
+        <p class="mapping-validation" id="mapping-validation" role="status" aria-live="polite">このデモでは日付・店舗・メニュー・売上金額が必要です。顧客IDは任意です。</p>
+        <div class="mapping-card">
+          <div class="mapping-head"><span>CSVの項目</span><span></span><span>SalonBoxで使う項目</span><span>状態</span></div>
+          <div class="mapping-row" data-target="date">
+            <button class="source-chip" type="button" draggable="true" data-source="売上日">売上日 <span aria-hidden="true">⠿</span></button>
+            <span class="map-arrow" aria-hidden="true">→</span>
+            <div class="target-field"><span class="target-icon">▦</span><strong>日付 <small class="field-requirement">必須</small></strong><select aria-label="日付に使うCSV項目" data-map="date"><option value="">項目を選択</option><option value="売上日">売上日</option><option value="店舗名">店舗名</option><option value="メニュー名">メニュー名</option><option value="売上金額">売上金額</option><option value="顧客ID">顧客ID</option></select></div>
+            <span class="map-state" data-state="date">未設定</span>
+          </div>
+          <div class="mapping-row" data-target="store">
+            <button class="source-chip" type="button" draggable="true" data-source="店舗名">店舗名 <span aria-hidden="true">⠿</span></button>
+            <span class="map-arrow" aria-hidden="true">→</span>
+            <div class="target-field"><span class="target-icon">⌂</span><strong>店舗 <small class="field-requirement">必須</small></strong><select aria-label="店舗に使うCSV項目" data-map="store"><option value="">項目を選択</option><option value="売上日">売上日</option><option value="店舗名">店舗名</option><option value="メニュー名">メニュー名</option><option value="売上金額">売上金額</option><option value="顧客ID">顧客ID</option></select></div>
+            <span class="map-state" data-state="store">未設定</span>
+          </div>
+          <div class="mapping-row" data-target="menu">
+            <button class="source-chip" type="button" draggable="true" data-source="メニュー名">メニュー名 <span aria-hidden="true">⠿</span></button>
+            <span class="map-arrow" aria-hidden="true">→</span>
+            <div class="target-field"><span class="target-icon">✳</span><strong>メニュー <small class="field-requirement">必須</small></strong><select aria-label="メニューに使うCSV項目" data-map="menu"><option value="">項目を選択</option><option value="売上日">売上日</option><option value="店舗名">店舗名</option><option value="メニュー名">メニュー名</option><option value="売上金額">売上金額</option><option value="顧客ID">顧客ID</option></select></div>
+            <span class="map-state" data-state="menu">未設定</span>
+          </div>
+          <div class="mapping-row" data-target="sales">
+            <button class="source-chip" type="button" draggable="true" data-source="売上金額">売上金額 <span aria-hidden="true">⠿</span></button>
+            <span class="map-arrow" aria-hidden="true">→</span>
+            <div class="target-field"><span class="target-icon">￥</span><strong>売上金額 <small class="field-requirement">必須</small></strong><select aria-label="売上金額に使うCSV項目" data-map="sales"><option value="">項目を選択</option><option value="売上日">売上日</option><option value="店舗名">店舗名</option><option value="メニュー名">メニュー名</option><option value="売上金額">売上金額</option><option value="顧客ID">顧客ID</option></select></div>
+            <span class="map-state" data-state="sales">未設定</span>
+          </div>
+          <div class="mapping-row" data-target="customer">
+            <button class="source-chip" type="button" draggable="true" data-source="顧客ID">顧客ID <span aria-hidden="true">⠿</span></button>
+            <span class="map-arrow" aria-hidden="true">→</span>
+            <div class="target-field"><span class="target-icon">◎</span><strong>顧客ID <small class="field-requirement is-optional">任意</small></strong><select aria-label="顧客IDに使うCSV項目（任意）" data-map="customer"><option value="">設定しない</option><option value="売上日">売上日</option><option value="店舗名">店舗名</option><option value="メニュー名">メニュー名</option><option value="売上金額">売上金額</option><option value="顧客ID">顧客ID</option></select></div>
+            <span class="map-state" data-state="customer">未設定</span>
+          </div>
+          <div class="mapping-actions"><span id="mapping-count">0/4デモ必須項目</span><button type="button" class="auto-map-btn" id="auto-map">✦ 自動でマッピング</button></div>
+        </div>
+        <div class="stage-actions"><button class="text-button" id="back-to-upload" type="button">← CSV選択に戻る</button><button class="primary-button" id="show-dashboard" type="button" disabled>分析結果を見る <span aria-hidden="true">→</span></button></div>
+      </section>
+
+      <section class="stage dashboard-stage" id="step-dashboard" aria-labelledby="dashboard-title" hidden>
+        <div class="stage-heading dashboard-heading">
+          <div>
+            <p class="stage-kicker">STEP 03 <span>分析ダッシュボード</span></p>
+            <h2 id="dashboard-title">店舗ごとの売上を、ひと目で把握</h2>
+            <p>期間と店舗を切り替えて、数字の見え方を比べてみましょう。</p>
+          </div>
+        </div>
+        <div class="dashboard-filter-panel" id="dashboard-filter-panel">
+          <p class="filter-prompt"><span aria-hidden="true">↓</span> 期間・店舗を変えて比較できます</p>
+          <div class="dashboard-filters">
+            <label>期間<select id="period-filter"><option value="3">直近3ヶ月</option><option value="6" selected>直近6ヶ月</option><option value="12">直近12ヶ月</option></select></label>
+            <label>店舗<select id="store-filter"><option value="all">全店舗</option><option value="青山店">青山店</option><option value="横浜店">横浜店</option><option value="梅田店">梅田店</option></select></label>
+          </div>
+        </div>
+        <div class="metric-grid">
+          <article class="metric-card"><span>売上合計 <i>ⓘ</i></span><strong id="metric-sales">—</strong><small class="metric-up" id="metric-growth">—</small></article>
+          <article class="metric-card"><span>来店数合計 <i>ⓘ</i></span><strong id="metric-visitors">—</strong><small>選択期間の合計</small></article>
+          <article class="metric-card"><span>粗利合計 <i>ⓘ</i></span><strong id="metric-gross-profit">—</strong><small>デモ用の架空試算</small></article>
+          <article class="metric-card"><span>営業利益合計 <i>ⓘ</i></span><strong id="metric-operating-profit">—</strong><small>デモ用の架空試算</small></article>
+        </div>
+        <div class="chart-grid">
+          <article class="chart-card sales-chart-card">
+            <div class="chart-title-row"><div><h3>売上の推移</h3><p id="chart-period-caption">直近6ヶ月・単位：万円</p></div><span class="chart-menu" aria-hidden="true">•••</span></div>
+            <div class="chart-legend" id="chart-legend"></div>
+            <svg class="sales-chart" id="sales-chart" viewBox="0 0 720 260" role="img" aria-label="月ごとの売上推移グラフ"></svg>
+          </article>
+          <article class="chart-card store-chart-card">
+            <div class="chart-title-row"><div><h3>店舗別売上</h3><p id="store-chart-caption">選択期間の合計・全店比較</p></div><span class="chart-menu" aria-hidden="true">•••</span></div>
+            <div class="store-bars" id="store-bars"></div>
+          </article>
+          <article class="chart-card menu-chart-card">
+            <div class="chart-title-row"><div><h3>メニュー構成</h3><p id="menu-chart-caption">直近6ヶ月の売上構成・全店舗</p></div><span class="chart-menu" aria-hidden="true">•••</span></div>
+            <div class="donut-layout"><div class="donut" id="menu-donut"><svg class="donut-svg" viewBox="0 0 120 120" aria-hidden="true"><circle class="donut-track" cx="60" cy="60" r="42"></circle><g id="menu-donut-segments" transform="rotate(-90 60 60)"></g></svg><span><strong>構成比</strong><small>サンプル</small></span></div><ul class="menu-legend" id="menu-legend"></ul></div>
+          </article>
+          <article class="insight-card">
+            <div class="insight-label"><span class="sparkle">✦</span> デモ分析コメント</div>
+            <h3 id="insight-title">数字から、次の一手を考える。</h3>
+            <p id="insight-copy">サンプルデータの分析コメントがここに表示されます。</p>
+            <p class="insight-help">期間や店舗を切り替えると、グラフと数値が連動して変わります。</p>
+            <span class="fictional-caption">※架空データを使ったデモ表示です</span>
+            <a class="insight-cta" href="../contact/">自社の場合を無料で相談する <span aria-hidden="true">→</span></a>
+            <small class="insight-consultation-note">ご相談時に売上CSVの提出は不要です。</small>
+          </article>
+          <article class="chart-card heatmap-card">
+            <div class="chart-title-row"><div><h3>曜日×時間帯ヒートマップ（来店数）</h3><p id="heatmap-caption">サンプル来店数。濃い色ほど来店が多い想定です。</p></div><span class="chart-menu" aria-hidden="true">•••</span></div>
+            <div class="heatmap-scroll">
+              <table class="heatmap-table" aria-describedby="heatmap-caption">
+                <caption class="visually-hidden">曜日を行、9時から20時を列にした架空の来店傾向ヒートマップ</caption>
+                <thead><tr><th scope="col">曜日＼時間</th>
+                  <th scope="col">9</th><th scope="col">10</th><th scope="col">11</th><th scope="col">12</th><th scope="col">13</th><th scope="col">14</th>
+                  <th scope="col">15</th><th scope="col">16</th><th scope="col">17</th><th scope="col">18</th><th scope="col">19</th><th scope="col">20</th>
+                </tr></thead>
+                <tbody id="visit-heatmap"></tbody>
+              </table>
+            </div>
+            <p class="heatmap-scroll-help">横にスクロールして時間帯を確認できます。</p>
+            <div class="heatmap-legend" aria-label="来店数の凡例"><span>少ない</span><i class="heat-level-1"></i><i class="heat-level-2"></i><i class="heat-level-3"></i><i class="heat-level-4"></i><i class="heat-level-5"></i><span>多い</span></div>
+          </article>
+        </div>
+        <div class="dashboard-bottom">
+          <div class="demo-disclaimer"><span aria-hidden="true">ⓘ</span><span>この画面は架空のデータによるデモです。実際の数値・分析結果とは異なります。</span></div>
+          <div class="dashboard-actions"><span class="consultation-note">相談時に売上CSVの提出は不要です</span><button type="button" class="text-button" id="restart-demo">もう一度体験する</button><a class="primary-button" href="../contact/">自社の場合を無料で相談する <span aria-hidden="true">→</span></a></div>
+        </div>
+      </section>
+      <div class="demo-loading" id="demo-loading" hidden role="status" aria-live="polite">
+        <div class="loading-card">
+          <span class="loading-mark" aria-hidden="true">S</span>
+          <span class="loading-orbit" aria-hidden="true"></span>
+          <small class="loading-kicker">SALONBOX DEMO</small>
+          <strong>サンプルデータを整理しています</strong>
+          <small class="loading-description">架空のデータで画面を準備しています</small>
+          <span class="loading-track" aria-hidden="true"><i></i></span>
+          <span class="loading-caption">まもなく次の画面に進みます</span>
+        </div>
+      </div>
+    </section>
+
+    <footer class="page-foot"><span>SalonBox 操作デモ｜サンプルデータは架空です</span><a href="../">SalonBox LPへ戻る</a></footer>
+  </main>
+  <script src="demo.js"></script>
+</body>
+</html>

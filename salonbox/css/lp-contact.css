@@ -485,18 +485,38 @@ h1, p { margin: 0; padding: 0; }
   display: flex;
   align-items: center;
   gap: 8px;
-  cursor: pointer;
+  transition: color 0.2s ease;
+  min-height: 44px;
+  touch-action: manipulation;
+}
+.efo-agree-box.is-required .efo-agree-text {
+  color: #2f6d53;
+  font-weight: 600;
 }
 .efo-agree-box input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  -webkit-appearance: checkbox;
+  appearance: auto;
+  flex: 0 0 24px;
+  width: 24px;
+  height: 24px;
+  margin: 0;
   accent-color: var(--c-primary);
   cursor: pointer;
+  touch-action: manipulation;
+}
+.efo-agree-box input[type="checkbox"]:focus-visible {
+  outline: 3px solid rgba(79, 191, 140, .35);
+  outline-offset: 3px;
 }
 .efo-agree-text {
   font-size: 13px;
   color: var(--c-text-sub);
   font-weight: 500;
+}
+.efo-agree-text label {
+  margin-left: 4px;
+  cursor: pointer;
+  touch-action: manipulation;
 }
 .efo-agree-text a {
   text-decoration: underline;
@@ -529,26 +549,6 @@ h1, p { margin: 0; padding: 0; }
   background: var(--c-primary-hover);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(79, 191, 140, 0.4);
-}
-
-/* ── 8. Animation Effects (コンコルド効果アピール) ── */
-@keyframes pulse-agree {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); background: #f0fdf4; border-color: #4fbf8c; }
-  100% { transform: scale(1); }
-}
-.efo-agree-box.is-pulsing {
-  animation: pulse-agree 1.2s infinite ease-in-out;
-  border-color: #4fbf8c;
-}
-
-@keyframes pulse-btn {
-  0% { transform: scale(1); box-shadow: 0 4px 16px rgba(79, 191, 140, 0.3); }
-  50% { transform: scale(1.05); box-shadow: 0 16px 32px rgba(79, 191, 140, 0.5); }
-  100% { transform: scale(1); box-shadow: 0 4px 16px rgba(79, 191, 140, 0.3); }
-}
-.efo-btn-submit.btn-is-pulsing {
-  animation: pulse-btn 1.2s infinite ease-in-out;
 }
 
 /* ── 7. Alerts ── */
