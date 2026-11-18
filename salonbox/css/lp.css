@@ -1133,6 +1133,7 @@ html.s18-preintro .s18-hero-scene {
 }
 
 
+
 .s18-tablet-mock {
   position: absolute;
   
@@ -4392,3 +4393,7 @@ html.clarity-bot .s18-deco-orb {
     transition-duration: .01ms !important;
   }
 }
+
+/* Owner decision flow */
+.s18-decision-features{padding:100px 0;background:#fff}.s18-decision-flow{max-width:1000px;margin:auto;border-top:1px solid #d9e7dc}.s18-flow-row{display:grid;grid-template-columns:minmax(0,.87fr) minmax(0,1fr);align-items:center;gap:48px;padding:38px 0;border-bottom:1px solid #d9e7dc}.s18-flow-copy>span{display:inline-block;background:#e8f4eb;color:#277450;font-size:12px;font-weight:800;padding:4px 10px;margin-bottom:12px}.s18-flow-copy h3{font-size:clamp(21px,2.2vw,28px);line-height:1.45;color:var(--navy);margin:0 0 10px}.s18-flow-copy p{font-size:14px;color:var(--ink-s);margin:0}.s18-flow-visual,.s18-flow-advice{background:#f5f9f6;border:1px solid #dce9df;border-radius:7px;padding:21px 24px;line-height:1.6}.s18-flow-visual>strong,.s18-flow-advice>strong{display:block;font-size:12px;color:#277450;margin-bottom:12px}.s18-flow-visual>div{display:grid;grid-template-columns:86px 1fr 62px;gap:10px;align-items:center;padding:7px 0;font-size:11px}.s18-flow-visual b{white-space:nowrap}.s18-flow-visual i{display:block;width:var(--w);height:12px;background:#7ab698;border-radius:2px}.s18-flow-visual .is-focus{color:#116549}.s18-flow-visual .is-focus i{background:#287d57}.s18-flow-visual em{font-style:normal;text-align:right}.s18-flow-visual small,.s18-flow-advice small{display:block;color:#687b6c;font-size:10px;text-align:right;margin-top:10px}.s18-flow-menu>div{grid-template-columns:65px 1fr}.s18-flow-advice{background:#eaf5ed;border-left:4px solid #287d57}.s18-flow-advice p{font-size:15px;font-weight:700;margin:0}.s18-flow-advice small{text-align:left}
+@media(max-width:900px){.s18-flow-row{grid-template-columns:1fr;gap:18px}}@media(max-width:600px){.s18-decision-features{padding:70px 0}.s18-flow-row{padding:29px 0}.s18-flow-visual,.s18-flow-advice{padding:17px}.s18-flow-visual>div{grid-template-columns:70px 1fr 51px;gap:5px;font-size:10px}}
